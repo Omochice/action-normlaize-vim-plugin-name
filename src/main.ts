@@ -11,7 +11,10 @@ const main = async () => {
   }
   info("Complete main process");
   const normalized = normalize(context.repo.repo);
-  setOutput("normalizedName", stripDotVim ? trimTailDotVim(normalized) : normalized);
+  setOutput(
+    "normalizedName",
+    stripDotVim ? trimTailDotVim(normalized) : normalized,
+  );
   return await Promise.resolve(undefined);
 };
 main();
