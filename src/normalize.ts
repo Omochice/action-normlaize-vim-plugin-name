@@ -7,5 +7,5 @@ export function normalize(
 }
 
 export function trimTailDotVim(rawName: string): string {
-  return rawName.replace(/\.n?vim$/, "");
+  return rawName.replace(/\.+n?vim$/, "");
 }
