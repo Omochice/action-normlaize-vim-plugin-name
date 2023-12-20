@@ -1,6 +1,6 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: "Omochice/action-normalized-vim-plugin-name"
+description: "Provide normalized vim plugin name"
+author: "Omochice"
 
 # Metadata for market place
 branding:
@@ -9,16 +9,16 @@ branding:
 
 # Define your inputs here.
 inputs:
-  message:
-    description: 'Your input description here'
-    required: true
-    default: 'test message'
+  trim-tail-dot-vim:
+    description: "Whether trim tail '.vim' pattern"
+    required: false
+    default: "false"
 
 # Define your outputs here.
 outputs:
-  message:
-    description: 'Your output description here'
+  normalizedName:
+    description: 'Normalized plugin name'
+
 runs:
   using: node20
   main: dist/main.js
-  post: dist/post.js

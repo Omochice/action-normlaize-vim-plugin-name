@@ -7,7 +7,7 @@ console.debug("Start dnt ...");
 const outDir = "./npm";
 await emptyDir(outDir);
 await build({
-  entryPoints: ["./src/main.ts", "./src/post.ts"],
+  entryPoints: ["./src/main.ts"],
   outDir,
   typeCheck: false,
   test: false,
@@ -18,9 +18,10 @@ await build({
   },
   package: {
     // Dummy package.json
-    name: "The name of your action here",
+    name: "@Omochice/action-normalize-vim-plugin-name",
     version: "0.1.0",
-    description: "Provide a description here",
+    private: true,
+    description: "Dummy package for action-normalize-vim-plugin-name",
   },
 });
 
@@ -29,7 +30,7 @@ const distDir = "./dist";
 await emptyDir(distDir);
 
 await esbuild.build({
-  entryPoints: ["./npm/src/main.ts", "./npm/src/post.ts"],
+  entryPoints: ["./npm/src/main.ts"],
   outdir: distDir,
   bundle: true,
   platform: "node",
