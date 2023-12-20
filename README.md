@@ -9,7 +9,7 @@ Normalization work if your repository name is like:
 - `dps-some-plugin` => `some-plugin`
 - `denops-some-plugin` => `some-plugin`
 - `some-plugin.vim` => `some-plugin.vim`
-    - When specify `true` as `trim-tail-dot-vim`, `.vim` will be trimed.
+  - When specify `true` as `trim-tail-dot-vim`, `.vim` will be trimed.
 
 ## usage
 
