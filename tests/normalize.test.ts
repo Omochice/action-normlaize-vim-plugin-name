@@ -21,7 +21,16 @@ Deno.test("normalize", async (t) => {
 });
 
 Deno.test("trimTailDotVim", async (t) => {
-  await t.step("1", () => {
-    assertEquals(trimTailDotVim("foo.vim"), "foo");
-  });
+  const parameters: Parameter[] = [
+    { input: "some-plugin.vim", expected: "some-plugin" },
+    { input: "some-plugin-vim", expected: "some-plugin-vim" },
+    { input: "some-plugin..vim", expected: "some-plugin" },
+    { input: "some-plugin.nvim", expected: "some-plugin" },
+    { input: "some-plugin.nnvim", expected: "some-plugin.nnvim" },
+  ];
+  for (const { input, expected } of parameters) {
+    await t.step(`Check trimTailDotVim ${input} be ${expected}`, () => {
+      assertEquals(trimTailDotVim(input), expected);
+    });
+  }
 });
