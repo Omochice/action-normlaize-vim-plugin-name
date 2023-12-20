@@ -18,9 +18,10 @@ await build({
   },
   package: {
     // Dummy package.json
-    name: "The name of your action here",
+    name: "@Omochice/action-normalize-vim-plugin-name",
     version: "0.1.0",
-    description: "Provide a description here",
+    private: true,
+    description: "Dummy package for action-normalize-vim-plugin-name",
   },
 });
 
