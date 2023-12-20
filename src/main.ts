@@ -11,10 +11,11 @@ const main = () => {
     info(`You specify trim-tail-dot-vim.`);
   }
   info("Complete main process");
-  const normalized = normalize(context.repo.repo);
-  setOutput(
-    "normalizedName",
-    stripDotVim ? trimTailDotVim(normalized) : normalized,
-  );
+  const normalized = stripDotVim
+    ? trimTailDotVim(normalize(context.repo.repo))
+    : normalize(context.repo.repo);
+  debug(`normalized is "${normalized}"`);
+  setOutput("normalizedName", normalized);
 };
+
 main();
