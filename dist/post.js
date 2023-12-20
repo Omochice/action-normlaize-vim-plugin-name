@@ -18854,23 +18854,11 @@ Support boolean input list: \`true | True | TRUE | false | False | FALSE\``);
 });
 
 // npm/src/post.ts
-var import_core2 = __toESM(require_core());
-
-// npm/src/github.ts
 var import_core = __toESM(require_core());
-async function writeSummary(header, message) {
-  const md = `## ${header}
-
-${message}`;
-  await import_core.summary.addRaw(md).write();
-}
-
-// npm/src/post.ts
 var main = async () => {
-  (0, import_core2.info)("Start post process");
-  (0, import_core2.debug)("Debug message");
-  await writeSummary("post", "This is a post process summary");
-  (0, import_core2.info)("Complete post process");
+  (0, import_core.info)("Start post process");
+  (0, import_core.debug)("Debug message");
+  (0, import_core.info)("Complete post process");
 };
 main();
 /*! Bundled license information:
