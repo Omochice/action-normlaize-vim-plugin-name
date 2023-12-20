@@ -5,9 +5,10 @@ import { normalize, trimTailDotVim } from "./normalize.ts";
 const main = () => {
   info("Start main process");
   debug(JSON.stringify(context.repo));
-  const stripDotVim = getInput("strip-dot-vim", { required: false }) === "true";
+  const stripDotVim =
+    getInput("trim-tail-dot-vim", { required: false }) === "true";
   if (stripDotVim) {
-    info(`You specify strip-dot-vim.`);
+    info(`You specify trim-tail-dot-vim.`);
   }
   info("Complete main process");
   const normalized = normalize(context.repo.repo);

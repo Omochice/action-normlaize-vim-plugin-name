@@ -9,7 +9,7 @@ branding:
 
 # Define your inputs here.
 inputs:
-  strip-dot-vim:
+  trim-tail-dot-vim:
     description: 'Your input description here'
     required: false
     default: 'false'
