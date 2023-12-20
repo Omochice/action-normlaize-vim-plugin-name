@@ -22874,21 +22874,21 @@ function normalize(rawName, pattern = String.raw`^(n?vim|dps|denops)[_-]|[_-]n?v
   return rawName.replaceAll(replacePattern, "");
 }
 function trimTailDotVim(rawName) {
-  return rawName.replace(/\.n?vim$/, "");
+  return rawName.replace(/\.+n?vim$/, "");
 }
 
 // npm/src/main.ts
-var main = async () => {
+var main = () => {
   (0, import_core.info)("Start main process");
   (0, import_core.debug)(JSON.stringify(import_github.context.repo));
-  const stripDotVim = (0, import_core.getInput)("strip-dot-vim", { required: false }) === "true";
+  const stripDotVim = (0, import_core.getInput)("trim-tail-dot-vim", { required: false }) === "true";
   if (stripDotVim) {
-    (0, import_core.info)(`You specify strip-dot-vim.`);
+    (0, import_core.info)(`You specify trim-tail-dot-vim.`);
   }
   (0, import_core.info)("Complete main process");
-  const normalized = normalize(import_github.context.repo.repo);
-  (0, import_core.setOutput)("normalizedName", stripDotVim ? trimTailDotVim(normalized) : normalized);
-  return await Promise.resolve(void 0);
+  const normalized = stripDotVim ? trimTailDotVim(normalize(import_github.context.repo.repo)) : normalize(import_github.context.repo.repo);
+  (0, import_core.debug)(`normalized is "${normalized}"`);
+  (0, import_core.setOutput)("normalizedName", normalized);
 };
 main();
 /*! Bundled license information:
