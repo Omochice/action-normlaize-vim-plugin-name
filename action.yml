@@ -9,14 +9,14 @@ branding:
 
 # Define your inputs here.
 inputs:
-  message:
+  strip-dot-vim:
     description: 'Your input description here'
-    required: true
-    default: 'test message'
+    required: false
+    default: 'false'
 
 # Define your outputs here.
 outputs:
-  message:
+  normalizedName:
     description: 'Your output description here'
 runs:
   using: node20
