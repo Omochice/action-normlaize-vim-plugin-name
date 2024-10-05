@@ -1,4 +1,4 @@
-import { debug, getInput, info, setOutput } from "npm:@actions/core@1.10.1";
+import { debug, getInput, info, setOutput } from "npm:@actions/core@1.11.1";
 import { context } from "npm:@actions/github@6.0.0";
 import { normalize, trimTailDotVim } from "./normalize.ts";
 
